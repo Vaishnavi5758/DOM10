@@ -8,6 +8,11 @@ const userList = document.querySelector('#users');
 
 myForm.addEventListener('submit', onSubmit);
 
+let myobj ={
+    nameInput:this.nameInput,
+    emailInput:this.emailInput
+};
+
 function onSubmit(e) {
   e.preventDefault();
   
@@ -21,8 +26,10 @@ function onSubmit(e) {
   } else {
 
 
-    
-localStorage.setItem(nameInput.value,emailInput.value);
+    //saved to local storage ,can be seen in application wndw
+
+let myobj_serialized = JSON.stringify(myobj);
+localStorage.setItem("myobj",myobj_serialized);
 
 /*
     // Create new list item with user
